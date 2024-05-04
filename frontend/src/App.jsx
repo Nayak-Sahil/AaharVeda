@@ -1,9 +1,10 @@
+import Navbar from "./components/Landing/Navbar"
 
 function App() {
 
   return (
     <>
-      <p>Home Page</p>
+      <Navbar />
     </>
   )
 }
