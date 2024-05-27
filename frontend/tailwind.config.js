@@ -17,8 +17,11 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/src/assets/dots.png')",
+      },
       colors: {
-        primetext: "#242722",
+        primetext: "#4b5563",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -27,6 +30,7 @@ module.exports = {
         primary: {
           // DEFAULT: "hsl(var(--primary))",
           DEFAULT: "#0d9bbf",
+          // DEFAULT: "#0dbfa8",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {

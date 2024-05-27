@@ -7,11 +7,11 @@ import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 
 export default function Navbar() {
     return (
-        <header className="mb-2 px-4 shadow">
+        <header className="mb-2 px-4 w-full shadow">
             <div className="transition-all relative mx-auto flex max-w-screen-lg flex-col py-4 sm:flex-row sm:items-center sm:justify-between">
                 <a className="relative -top-1 flex items-center text-2xl font-black" href="/">
-                    <img src={AaharVedaVerti} alt="AaharVeda" className='sm:w-40 w-[135px]' />
-                    {/* <span className='text-gray-600'>Aahar<span className='text-primary'>Veda</span></span> */}
+                    <img src={AaharVedaHoriz} alt="AaharVeda" className='sm:w-40 w-[135px]' />
+                    {/* <span className='text-primetext'>Aahar<span className='text-primary'>Veda</span></span> */}
                 </a>
                 <input className="peer hidden" type="checkbox" id="navbar-open" />
                 <label className="absolute h-max block peer-checked:hidden right-2 -translate-y-[50%] top-[50%] cursor-pointer text-xl sm:hidden" for="navbar-open">
