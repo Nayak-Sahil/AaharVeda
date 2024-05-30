@@ -23,9 +23,38 @@ import {
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import recipeIllustration from "../assets/illustration/Recipe_Illustration.png";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet, NavLink } from "react-router-dom";
+import Navigation from "@/components/Dashboard/Navigation";
 
 export default function DashboardLayout() {
+  const navlistArr = [
+    {
+      label: "Dashboard",
+      link: "/dashboard",
+      icon: <Home className="h-4 w-4" />,
+    },
+    {
+      label: "Services",
+      link: "/dashboard/services",
+      icon: <LayoutList className="h-4 w-4" />,
+    },
+    {
+      label: "Favourites",
+      link: "/dashboard/favourites",
+      icon: <FolderHeart className="h-4 w-4" />,
+    },
+    {
+      label: "Account",
+      link: "/dashboard/account",
+      icon: <UserRound className="h-4 w-4" />,
+    },
+    {
+      label: "Log Out",
+      link: "/",
+      icon: <LogOut className="h-4 w-4 rotate-180" />,
+    },
+  ];
+
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[235px_1fr]">
       <div className="hidden border-r bg-muted/40 md:block">
@@ -43,44 +72,15 @@ export default function DashboardLayout() {
           </div>
           <div className="flex-1 mt-3">
             <nav className="grid items-start px-3 text-sm font-medium lg:px-4">
-              <a
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-3 text-muted-foreground transition-all hover:text-primary"
-              >
-                <Home className="h-4 w-4" />
-                Dashboard
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-3 text-muted-foreground transition-all hover:text-primary"
-              >
-                <LayoutList className="h-4 w-4" />
-                Services
-                <Badge className="ml-auto bg-gray-200 text-[11px] py-0 text-foreground">
-                  New
-                </Badge>
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-3 rounded-lg bg-muted px-3 py-3 text-primary transition-all hover:text-primary"
-              >
-                <FolderHeart className="h-4 w-4" />
-                Favourites{" "}
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-3 text-muted-foreground transition-all hover:text-primary"
-              >
-                <UserRound className="h-4 w-4" />
-                Account
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-3 text-muted-foreground transition-all hover:text-red-400"
-              >
-                <LogOut className="h-4 w-4 rotate-180" />
-                Log Out
-              </a>
+              {navlistArr.map((nav) => {
+                return (
+                  <Navigation
+                    label={nav.label}
+                    link={nav.link}
+                    icon={nav.icon}
+                  />
+                );
+              })}
             </nav>
           </div>
           <div className="mt-auto mx-auto p-4">
@@ -110,15 +110,25 @@ export default function DashboardLayout() {
             </SheetTrigger>
             <SheetContent side="left" className="flex flex-col">
               <nav className="grid gap-2 text-lg font-medium">
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="flex items-center gap-2 mb-5 text-lg font-semibold"
                 >
                   <span className="text-primetext">
                     Aahar<span className="text-primary">Veda</span>
                   </span>
-                </a>
-                <a
+                </Link>
+                {navlistArr.map((nav) => {
+                  return (
+                    <Navigation
+                      newClass="mx-[-0.65rem] text-base gap-4"
+                      label={nav.label}
+                      link={nav.link}
+                      icon={nav.icon}
+                    />
+                  );
+                })}
+                {/* <a
                   href="#"
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-primary"
                 >
@@ -155,7 +165,7 @@ export default function DashboardLayout() {
                 >
                   <LogOut className="h-5 w-5" />
                   Log Out
-                </a>
+                </a> */}
               </nav>
               <div className="mt-auto mx-auto p-4">
                 <img

@@ -9,6 +9,7 @@ import {
 import Dashboard from "./dashboard/pages/Dashboard";
 import Faviorate from "./dashboard/pages/Faviorate";
 import DashboardLayout from "./dashboard/DashboardLayout";
+import Service from "./dashboard/pages/Services";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,8 +24,12 @@ const router = createBrowserRouter([
         element: <Dashboard />
       },
       {
-        path: "faviorate",
+        path: "favourites",
         element: <Faviorate />
+      },
+      {
+        path: "services",
+        element: <Service />
       },
     ]
   },
