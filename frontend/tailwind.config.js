@@ -19,6 +19,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero-pattern': "url('/src/assets/dots.png')",
+        'veg-abstraction': "url('/src/assets/abstraction/vegAbstractRight.png')"
       },
       colors: {
         primetext: "#4b5563",

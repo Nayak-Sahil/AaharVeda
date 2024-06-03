@@ -128,44 +128,6 @@ export default function DashboardLayout() {
                     />
                   );
                 })}
-                {/* <a
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-primary"
-                >
-                  <Home className="h-4 w-4" />
-                  Dashboard
-                </a>
-                <a
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-base text-foreground hover:text-primary"
-                >
-                  <LayoutList className="h-4 w-4" />
-                  Services
-                  <Badge className="ml-auto bg-gray-200 text-[11px] py-0 text-foreground">
-                    New
-                  </Badge>
-                </a>
-                <a
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-primary"
-                >
-                  <FolderHeart className="h-4 w-4" />
-                  Favourites
-                </a>
-                <a
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-primary"
-                >
-                  <UserRound className="h-5 w-5" />
-                  Account
-                </a>
-                <a
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-primary"
-                >
-                  <LogOut className="h-5 w-5" />
-                  Log Out
-                </a> */}
               </nav>
               <div className="mt-auto mx-auto p-4">
                 <img

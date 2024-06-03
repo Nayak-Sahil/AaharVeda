@@ -6,7 +6,7 @@ import {
   ExternalLink,
   Leaf,
 } from "lucide-react";
-
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Carousel,
@@ -28,7 +28,7 @@ export default function Dashboard() {
   return (
     <>
       <div className="flex items-center">
-        <h1 className="text-lg text-primetext font-semibold md:text-lg">
+        <h1 className="text-lg text-primetext font-semibold md:text-base">
           Dashboard
         </h1>
       </div>
@@ -54,7 +54,7 @@ export default function Dashboard() {
                           <CardContent className="flex flex-col aspect-square items-center justify-center p-2">
                             <img
                               className="rounded-full shadow-md"
-                              src="https://edamam-product-images.s3.amazonaws.com/web-img/50b/50b1b42b19b2037118c82e10c4b14acb-s.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEgaCXVzLWVhc3QtMSJIMEYCIQCR%2Buc1OHao35a2qIdB%2FT3cwfrwKYzYqXmIJI%2B0CGN67AIhANvXDIJHz7KRvDdvwFSFKmumoE6XnyjUsvIq2R3g1L2oKsIFCMH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMTg3MDE3MTUwOTg2Igyp3JekT7nwTNmgnzkqlgX%2BJr6ZVC%2BL9NvM8uDVy8V1leJK2tbuUxdVq%2B3t0FiNqiVbK3nL0kd4FSBgv0lqHOqQBEwQVdzwQSrD5aCcrK28S%2Bt5DitWAjz3tKDQyvW%2B4VABqTSt9k57MMY9sJCFvd%2F7YeKnI7GBF3RznE8zVzrpq7BfrMTRoEn4SJLyt%2FUiQ%2FSvqGw5CxeNdUHZizIAiHRYN6LF4nFusbSTo2x1N5DA5gUGMpGLPu3ZORTBQ%2FKRo5f%2FcHr561O1wc4iSIjBLu7pQnTFiscStfK%2BCkWc6wFnnBCc1dBLDkdSCvGB0nC98%2BL37YokOnlUg1qm9NOWUf7jVo11DI2m9bYDy3J719R0kudnEyygBEaChv6z1jlQ%2BGjQuJsynkLflL7y1hkMnE9hdV8LFFba4BPQDheibNttR2MFQH64wd%2FhJQoMELX4Nh2MovOb8ssUI6%2BJCE5TPLvow0pFHdnhldLpF0HYnqWMJlNd423CvUuuiLw0eAaOL78dJycWOU%2BO2ArwO%2BdWE6bwO4cj6vX9SYw6KUTEyaxhzvvHdtqUZAct5DcCa9wBsQ7bwgL%2Fl1UDK%2Fg8ic7GZTOiTc7nTXLGmjeWfOHly2pN15l6T4yr%2FX8HUss2hgSpSH%2BOhfp1g%2FGI4HAyxAe%2Fh0AndtS32aTZ9TH0ymhFQ2z8IkCRMm8iG28W6Z1Nnz0IPIegIJz%2Fx0%2BOdpoHHt6%2BNYHfUGrsamfsgEFiY1v3TVFpPGCe5g5n9psOuDCgwBefxcXhoJYKSHRQZ4FesKpMHZGWPRUXIfMk8br8pmptexSAy4a59SE%2FJDrD%2FVowlcpAxESAgvnojPPmdVYMJiTiSZPJQaqGzwaVgJV5sc413StJiqTfZ68KwwISD%2FvAhg2Hv7sgcDaRlTCusM2yBjqwAaAEYMsd7jp9IuDSyKHRGcuEEvOzxY8fBVQE8O282s0fJ9V7WW8t06%2FzKhyycK3ZFV1InwEia7SKxmFA1pkRhk5pSXUMCpqekwhK1uxCtBMfJR35sAXIT%2FU197vBXwd%2FSLfDksjevTFygIlexmXgAlhEwwJZbDx8JBR5wV0GJQMPrZW4n1eDTPeKxZsw5mt7Lt8WiPmT5903LeHH7jYot59HbCJW0DJZfzquTw12tYqo&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240526T165045Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFPY7DWE6N%2F20240526%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=f353f28b6b468b189a07692f9c7fedcfcfccaf61b2b24eb008e25623c46ce61d"
+                              src="https://edamam-product-images.s3.amazonaws.com/web-img/50b/50b1b42b19b2037118c82e10c4b14acb-s.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAIaCXVzLWVhc3QtMSJGMEQCIFdFPNA5jpLl0AWh5AcBYfxq90Uc38f0gtCOvwXF3bILAiAAlpUkG3rpnSYWzbQ9L%2BP6FnaIDYOFWToHsuHVy3F9IyrBBQiL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDE4NzAxNzE1MDk4NiIMjEUaRM1C3%2FDYhATDKpUFdXHngAse9bvyo5ww6GWwU9j00ftnsfdYDb2F01yKGMpuQAaTaHyXziYAHDATyrGVax8evfWbTMaVBxodMeAgcEB5ALd%2BVcCBb4risVg07trxSnLSToXVKk6NQpRewooLzGvE0H4FZJlsgm65q9FOAXubGOAQZ8ud8W9cv8ME5WLtRVZdfq0KXMSEmqPo88CgzuWN%2FdgXJLqtiegRv2KY%2B0BK7edOz%2FzWctOUoywKw%2BJSrImVAlCppc%2F6bZqsj4Kc761V37zRPrOQHZsQ0Xne7Owid%2F7p%2FnCoLnbEIj99omc%2BNxCh%2BRGdbLitZIzsE9ZVVZRWaC3Wwkv%2F1UeSpiKKGqo6VXbONsgsPWlnA1lxsIZUGhn6oWFQ7ZxOnYDfua3iFaP%2FBPPHnCjOCpcFV3E5FtipCyLYeRdMp0hCwTbAw9dMyjdUMR6cCidyC05BlwXNLmLmV3NLzKJRDFwwTyljTGeS56kqQpl%2FHo9KbbGAmfVaQ2v%2FSXlxzBUfoY3o75qCKUEpTHbDv%2BVg9Y0QhHpfdHmXTuoNt6UA36udb7OkT6xFspcXW2N2Smq4IOxoub1bm7rDh6ArC2vQxeTPLdQKOfjsowldqjMacgT%2Btr8NvslunqrcpbU%2BmqPVDlhI%2FzA%2BLoLIBh%2FUrkhBcOqQU4O5daypEZiquSU%2FZ2Kj7MPB%2BB4TxCoZRWku25MOINCtLEg88F67womBPfEJ12tiY4f7lYt%2BM32MvC7ztbkQjbcnOf8u3%2FmfoIguJlO%2B7hM585fzU%2FXFvHVprwSzur7FwcogOOnvVmmxEw15eIcxDMbvf9I0fOwQYWwRfshw%2FJisuIFsWKQ328DxWd%2BeypxYxfIPASxRMhd8TRg4EaC1Pfs%2BU1QT35TucDCDqPayBjqyAYYewefGyDZhWFP76drXbf15teV5vWH1GMPBQCjRVqej39ns6dz1Yk3Kb2RSR9TaiUx3omxg0ijMCLKfrO292D%2Bb0VxahQfw1KWUDgPuwOBCM8eYvqBw0fxM8YfD%2BtrJRauJ91UreWWaLUFJLh13aV0dRH5WvSLo5c1KAPkvhQNOMPo%2BO0fI4AeSIWGdom86HrJtIXp6m6WfgS8lRDdmR6%2FVhznxMGZFuEs6%2BrwXo1swoJ0%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240603T104931Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFCIWUUEXI%2F20240603%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=16727e48b1709160873c1b2cb212b36617fe27710d4940ad2bdaf0aefaf81a3c"
                               alt="Food"
                             />
                             <span className="text-sm mt-3 font-semibold">
@@ -110,6 +110,24 @@ export default function Dashboard() {
             </CardHeader>
           </Card>
         </div>
+      </section>
+
+      <section>
+        <Card className="w-full sm:col-span-2 bg-veg-abstraction bg-no-repeat bg-contain bg-right">
+          <CardHeader className="pb-3 flex">
+            <CardTitle className="text-base text-primary tracking-wide">
+              Discover Nutrients
+            </CardTitle>
+            <CardDescription className="text-primetext">
+              Discover comprehensive <b>nutrient details</b> for every
+              ingredient in your daily meals 🥣.
+              {/* Discover recipes complete with detailed <b>nutritional information and ingredient lists</b>.  */}
+            </CardDescription>
+          </CardHeader>
+          <CardFooter>
+            <Button variant="outline">Explore Nutrients</Button>
+          </CardFooter>
+        </Card>
       </section>
     </>
   );
