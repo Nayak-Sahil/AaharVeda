@@ -13,7 +13,7 @@ import orange from "../../assets/illustration/orange.png";
 import tomato from "../../assets/illustration/tomato.png";
 import straberry from "../../assets/illustration/strawberry.png";
 import avocado from "../../assets/illustration/avocado.png";
-import dashboard from "../../assets/Dashboard1.png"
+import dashboard from "../../assets/Dashboard.png"
 
 export default function MainModel() {
   return (
