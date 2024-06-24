@@ -10,6 +10,7 @@ import Dashboard from "./dashboard/pages/Dashboard";
 import Faviorate from "./dashboard/pages/Faviorate";
 import DashboardLayout from "./dashboard/DashboardLayout";
 import Service from "./dashboard/pages/Services";
+import Recipe from "./dashboard/pages/Recipe";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,7 +30,16 @@ const router = createBrowserRouter([
       },
       {
         path: "services",
-        element: <Service />
+        children:[
+          {
+            path: "",
+            element: <Service />,
+          },
+          {
+            path: "Recipe",
+            element: <Recipe />
+          },
+        ]
       },
     ]
   },

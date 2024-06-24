@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
 export default function Search() {
   return (
-    <div>
-      Search Page
-    </div>
-  )
+    <>
+      <div className="flex items-center">
+        <h1 className="text-lg text-primetext font-semibold md:text-base">
+          Search
+        </h1>
+      </div>
+    </>
+  );
 }
