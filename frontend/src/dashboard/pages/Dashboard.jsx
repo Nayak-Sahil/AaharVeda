@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   TrendingUp,
   ShoppingCart,
@@ -28,8 +28,19 @@ import { Chart as ChartJS } from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
 import ServiceCard from "@/components/Dashboard/ServiceCard";
 import CarouselRecipe from "@/components/Dashboard/CarouselRecipe";
+import PieChart from "@/components/Dashboard/PieChart";
+import { useEffect } from "react";
 
 export default function Dashboard() {
+
+  const [RecipeList, setRecipeList] = useState([]);
+  useEffect(()=>{
+    fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=salad&app_id=${import.meta.env.VITE_API_APP_ID}&app_key=${import.meta.env.VITE_API_APP_KEY}`).then((data)=> data.json()).then((recipes)=>{
+      setRecipeList(Array.from(recipes.hits));
+      console.warn(recipes);
+    });
+  }, [])
+
   return (
     <>
       <div className="flex items-center">
@@ -40,51 +51,13 @@ export default function Dashboard() {
 
       <section className="flex flex-col md:flex-row w-full h-max items-center justify-between">
         {/* Trending Recipe */}
-        <ServiceCard title="Trending Recipe" description="💖 Most Likely" icon={<TrendingUp className="h-5 w-5 text-muted-foreground" />} content={<CarouselRecipe />}/>
+        <ServiceCard title="Trending Recipe" description="💖 Most Likely" icon={<TrendingUp className="h-5 w-5 text-muted-foreground" />} content={<CarouselRecipe recipeList={RecipeList} />}/>
 
         {/* Daily Nutrients Section */}
-        <div className="w-72 mt-3 md:mt-0 h-full">
-          <Card className="sm:col-span-2 h-full">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm tracking-wide font-medium text-primary">
-                Daily Nutrients
-                <p className="text-[10px] text-primetext">
-                  🥑 Your Daily Nutrients Intake
-                </p>
-              </CardTitle>
-              <Leaf className="h-5 w-5 text-muted-foreground" />
-            </CardHeader>
-            <CardContent className="flex flex-col justify-center items-center mt-2">
-              <div className="w-48 h-48">
-                <Doughnut
-                  // options = {data}
-                  data={{
-                    labels: ["Fat", "Protein", "Carbs"],
-                    datasets: [
-                      {
-                        label: "Nutrients",
-                        data: [300, 50, 100],
-                        backgroundColor: ["#ff8f92", "#ffe773", "#0da7d5c7"],
-                        borderColor: ["#ff5a5f", "#ffd817", "#0da7d5"],
-                        hoverOffset: 4,
-                      },
-                    ],
-                  }}
-                  // {...props}
-                />
-              </div>
-              <a
-                variant="outline"
-                className="text-sm relative -bottom-4 text-muted-foreground text-primary flex item-center p-0"
-              >
-                Set Intake <ExternalLink className="w-[14px] h-[14px] ml-1" />
-              </a>
-            </CardContent>
-          </Card>
-        </div>
-
+        <ServiceCard title="Daily Nutrients" description="🥑 Your Daily Nutrients Intake" icon={<Leaf className="h-5 w-5 text-muted-foreground" />} content={<PieChart wrapperStyle="h-60 flex flex-col items-center justify-evenly" pieStyle="w-48 h-48" wantAction={true} />} cardContentStyle="px-0 py-0 flex flex-col justify-center items-center pb-4" />
+    
         {/* Today Recipe */}
-        <ServiceCard title="Today Recipe" description="🥣 Your Daily Recipe Plan" icon={<Calendar className="h-5 w-5 text-muted-foreground" />} content={<CarouselRecipe />}/>
+        <ServiceCard title="Today Recipe" description="🥣 Your Daily Recipe Plan" icon={<Calendar className="h-5 w-5 text-muted-foreground" />} content={<CarouselRecipe recipeList={RecipeList.slice(6, 8)} />}/>
       </section>
 
       <section>

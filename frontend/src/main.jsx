@@ -2,15 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import {
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Dashboard from "./dashboard/pages/Dashboard";
 import Faviorate from "./dashboard/pages/Faviorate";
 import DashboardLayout from "./dashboard/DashboardLayout";
 import Service from "./dashboard/pages/Services";
 import Recipe from "./dashboard/pages/Recipe";
+import Search from "./dashboard/pages/SearchRecipe";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,26 +20,38 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Dashboard />
+        element: <Dashboard />,
       },
       {
         path: "favourites",
-        element: <Faviorate />
+        element: <Faviorate />,
+      },
+      {
+        path: "search-recipe",
+        element: <Search />,
       },
       {
         path: "services",
-        children:[
+        children: [
           {
             path: "",
             element: <Service />,
           },
           {
             path: "Recipe",
-            element: <Recipe />
+            children: [
+              {
+                path: ":keyword",
+                element: <Recipe />,
+                loader: async ({ request, params }) => {
+                  return fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${params.keyword}&app_id=${import.meta.env.VITE_API_APP_ID}&app_key=${import.meta.env.VITE_API_APP_KEY}`);
+                },
+              },
+            ],
           },
-        ]
+        ],
       },
-    ]
+    ],
   },
 ]);
 

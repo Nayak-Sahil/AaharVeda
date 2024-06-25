@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge"
 
-export default function ServiceCard({ style, title, description, icon, content, isSoon }) {
+export default function ServiceCard({ style, title, description, icon, content, isSoon, cardContentStyle }) {
   return (
     <div className={`w-72 relative mr-5 ${style}`}>
       <Card>
@@ -21,7 +21,7 @@ export default function ServiceCard({ style, title, description, icon, content, 
           </CardTitle>
           {isSoon ? <Badge className="text-[10px] absolute top-5 right-5 tracking-wide text-center" variant="secondary">Comming Soon</Badge> : ""} {icon}
         </CardHeader>
-        <CardContent className="px-6 py-2">
+        <CardContent className={`px-6 py-2 ${cardContentStyle}`}>
             {content}
         </CardContent>
       </Card>

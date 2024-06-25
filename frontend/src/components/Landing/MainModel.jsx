@@ -14,6 +14,7 @@ import tomato from "../../assets/illustration/tomato.png";
 import straberry from "../../assets/illustration/strawberry.png";
 import avocado from "../../assets/illustration/avocado.png";
 import dashboard from "../../assets/Dashboard.png"
+import { Link } from "react-router-dom";
 
 export default function MainModel() {
   return (
@@ -52,13 +53,13 @@ export default function MainModel() {
         </p>
       </div>
       <div className="w-96 mt-4 h-max flex items-start justify-between">
-        <button className="bg-white rounded-full border-[1px] border-primetext px-6 py-2 font-medium hover:bg-white hover:scale-95 sm:flex sm:items-center shadow-md transform transition duration-100 hover:shadow-inner ease-in-out">
+        <Link to='./dashboard' className="bg-white rounded-full border-[1px] border-primetext px-6 py-2 font-medium hover:bg-white hover:scale-95 sm:flex sm:items-center shadow-md transform transition duration-100 hover:shadow-inner ease-in-out">
           <FontAwesomeIcon
             className="mr-2 text-xl"
             icon={faSearchengin}
           ></FontAwesomeIcon>
           Guide Me
-        </button>
+        </Link>
         <button className="bg-white rounded-full border-[1px] border-primary px-6 py-2 font-medium text-primary hover:scale-95 sm:flex sm:items-center shadow-md transform transition duration-100 hover:shadow-inner ease-in-out">
           <FontAwesomeIcon
             className="mr-2 text-lg"

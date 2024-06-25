@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import recipeIllustration from "../assets/illustration/Recipe_Illustration.png";
+import kitchenCooking from "../assets/illustration/kitchenCooking.png";
 import { Link, Outlet, NavLink } from "react-router-dom";
 import Navigation from "@/components/Dashboard/Navigation";
 
@@ -38,11 +38,11 @@ export default function DashboardLayout() {
       link: "/dashboard/services",
       icon: <LayoutList className="h-4 w-4" />,
     },
-    {
-      label: "Favourites",
-      link: "/dashboard/favourites",
-      icon: <FolderHeart className="h-4 w-4" />,
-    },
+    // {
+    //   label: "Favourites",
+    //   link: "/dashboard/favourites",
+    //   icon: <FolderHeart className="h-4 w-4" />,
+    // },
     {
       label: "Account",
       link: "/dashboard/account",
@@ -72,9 +72,10 @@ export default function DashboardLayout() {
           </div>
           <div className="flex-1 mt-3">
             <nav className="grid items-start px-3 text-sm font-medium lg:px-4">
-              {navlistArr.map((nav) => {
+              {navlistArr.map((nav, index) => {
                 return (
                   <Navigation
+                    key={index}
                     label={nav.label}
                     link={nav.link}
                     icon={nav.icon}
@@ -85,7 +86,7 @@ export default function DashboardLayout() {
           </div>
           <div className="mt-auto mx-auto p-4">
             <img
-              src={recipeIllustration}
+              src={kitchenCooking}
               width={170}
               alt="Recipe Kitchen Illustration"
             />
@@ -118,9 +119,10 @@ export default function DashboardLayout() {
                     Aahar<span className="text-primary">Veda</span>
                   </span>
                 </Link>
-                {navlistArr.map((nav) => {
+                {navlistArr.map((nav, index) => {
                   return (
                     <Navigation
+                      key={index}
                       newClass="mx-[-0.65rem] text-base gap-4"
                       label={nav.label}
                       link={nav.link}
@@ -131,7 +133,7 @@ export default function DashboardLayout() {
               </nav>
               <div className="mt-auto mx-auto p-4">
                 <img
-                  src={recipeIllustration}
+                  src={kitchenCooking}
                   width={170}
                   alt="Recipe Kitchen Illustration"
                 />
@@ -146,7 +148,7 @@ export default function DashboardLayout() {
               <div className="relative">
                 <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input
-                  type="search"
+                  type="text"
                   placeholder="Search Recipe, Food's Nutrients, ..."
                   className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/2"
                 />

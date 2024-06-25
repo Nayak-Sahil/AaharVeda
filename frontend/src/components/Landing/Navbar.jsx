@@ -27,7 +27,7 @@ export default function Navbar() {
                         <li className=""><a className="text-primetext hover:text-primary" href="#">Home</a></li>
                         <li className=""><a className="text-primetext hover:text-primary" href="#">Features</a></li>
                         <li className=""><a className="text-primetext hover:text-primary" href="#">How it works?</a></li>
-                        <li className="mt-2 sm:mt-0"><a className="rounded-full border-[1px] border-primary px-6 py-1 font-medium text-primary hover:bg-primary hover:text-white sm:flex sm:items-center shadow transition-colors ease-in-out" href="#">Sign In</a></li>
+                        {/* <li className="mt-2 sm:mt-0"><a className="rounded-full border-[1px] border-primary px-6 py-1 font-medium text-primary hover:bg-primary hover:text-white sm:flex sm:items-center shadow transition-colors ease-in-out" href="#">Sign In</a></li> */}
                     </ul>
                 </nav>
             </div>
