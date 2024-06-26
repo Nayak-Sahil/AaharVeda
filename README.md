@@ -8,7 +8,7 @@ Our platform allows users to:
 - **Save** their favorite recipes.
 - Search for **recipes based on specific health problems** and receive recommendations on what to eat in particular situations.
   
-## 🎨 Dashboard Interface
+## 🎨 Home Interface
 <p align="center"><img width="1000" src="https://github.com/Nayak-Sahil/AaharVeda/blob/main/frontend/src/assets/Dashboard.png" style="border-radius: 30px;"></p>
 
 ## 🛠 Tech Stack
