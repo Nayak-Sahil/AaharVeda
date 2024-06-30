@@ -47,7 +47,7 @@ export default function Recipe(props) {
           </h1>
           <p className="text-xs font-bold">Source: <a href={RecipeData.sourceLink} className="text-primetext">{RecipeData.source}</a></p>
         </div>
-        <div className="w-full sm:h-full mt-5 sm:mt-0 h-max flex flex-wrap items-center justify-center">
+        <div className="sm:w-max w-full sm:h-full mt-5 sm:mt-0 h-max flex flex-wrap items-center justify-center">
           <RecipeTypeCard
             customCss="ml-1"
             typeIcon={<Salad className="text-primetext w-4 mr-4" />}
@@ -60,7 +60,7 @@ export default function Recipe(props) {
             typeVal={RecipeData.mealType}
           />
           <RecipeTypeCard
-            customCss="mt-3"
+            customCss="sm:mt-0 mt-3"
             typeIcon={<UtensilsCrossed className="text-primetext w-4 mr-4" />}
             typeKey="Dish Type"
             typeVal={RecipeData.dishType}
@@ -68,8 +68,8 @@ export default function Recipe(props) {
         </div>
       </header>
       <main className="w-full sm:h-[85%] h-max flex flex-wrap justify-between items-center">
-        <div className="sm:w-[70%] w-full sm:h-full h-max mr-7 border-gray-100 rounded-lg flex flex-col justify-between items-center">
-          <div className="w-full sm:h-[45%] h-max flex flex-wrap justify-center sm:justify-between items-center">
+        <div className="sm:w-[70%] w-full sm:h-full h-max sm:mr-7 border-gray-100 rounded-lg flex flex-col justify-between items-center">
+          <div className="w-full sm:h-[45%] h-max flex sm:flex-row flex-col flex-wrap justify-center sm:justify-between items-center">
             <img className="sm:mb-0 mb-5" width={200} src={RecipeData.img} alt={`Recipe: ${RecipeData.title}`} />
             <div className="w-[250px] h-full sm:mb-0 mb-5 border flex flex-col justify-center border-gray-200 rounded-lg p-5">
               <p className="text-sm mb-2 truncate w-[95%] flex justify-between"><b className="text-primetext">Yeild:</b> <span className="text-primary font-semibold">{RecipeData.yeild} Item</span></p>
