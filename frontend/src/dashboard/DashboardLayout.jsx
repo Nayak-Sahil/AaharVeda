@@ -2,7 +2,6 @@ import {
   Bell,
   Home,
   Menu,
-  Search,
   LayoutList,
   FolderHeart,
   UserRound,
@@ -25,6 +24,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import kitchenCooking from "../assets/illustration/kitchenCooking.png";
 import { Link, Outlet, NavLink } from "react-router-dom";
 import Navigation from "@/components/Dashboard/Navigation";
+import SearchBar from "@/components/Dashboard/SearchBar";
 
 export default function DashboardLayout() {
   const navlistArr = [
@@ -144,16 +144,7 @@ export default function DashboardLayout() {
             </SheetContent>
           </Sheet>
           <div className="w-full flex-1">
-            <form>
-              <div className="relative">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input
-                  type="text"
-                  placeholder="Search Recipe, Food's Nutrients, ..."
-                  className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/2"
-                />
-              </div>
-            </form>
+            <SearchBar />
           </div>
           {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
