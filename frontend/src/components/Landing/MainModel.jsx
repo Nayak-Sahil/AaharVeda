@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 
 export default function MainModel() {
   return (
-    <div className="relative px-7 sm:px-0 bg-hero-pattern w-full h-max flex flex-col items-center justify-start">
+    <div className="relative sm:px-7 px-3 bg-hero-pattern w-full h-max flex flex-col items-center justify-start">
       <img
         className="sm:block opacity-80 hidden absolute top-40 right-72"
         src={avocado}
@@ -43,17 +43,17 @@ export default function MainModel() {
         alt="Orange"
         width={40}
       />
-      <div className="bg-white/50 mt-5 flex flex-col justify-between items-center h-[140px] sm:h-[120px] p-5 rounded">
+      <div className="bg-white/50 mt-5 flex flex-col justify-between items-center h-max sm:h-[120px] sm:p-5 rounded">
         <h1 className="text-2xl sm:text-4xl h-max bg-gradient-to-r to-stone-500 from-primetext bg-clip-text text-center text-transparent">
           Your ultimate guide to unlocking a healthier life
         </h1>
-        <p className="sm:text-lg text-base text-center font-semibold text-primary">
+        <p className="sm:text-lg sm:mt-0 mt-2 text-base text-center font-semibold text-primary">
           Nourish your Body, Mind, and Soul with Aahar
           <span className="text-primetext">Veda.</span>
         </p>
       </div>
-      <div className="w-96 mt-4 h-max flex items-start justify-between">
-        <Link to='./dashboard' className="bg-white rounded-full border-[1px] border-primetext px-6 py-2 font-medium hover:bg-white hover:scale-95 sm:flex sm:items-center shadow-md transform transition duration-100 hover:shadow-inner ease-in-out">
+      <div className="sm:w-96 sm:px-0 px-5 w-full mt-4 h-max flex flex-wrap items-start justify-center sm:justify-between">
+        <Link to='./dashboard' className="bg-white rounded-full border-[1px] border-primetext px-6 py-2 font-medium hover:bg-white hover:scale-95 sm:flex sm:items-center shadow-md transform transition duration-100 hover:shadow-inner ease-in-out mb-5 sm:mb-0">
           <FontAwesomeIcon
             className="mr-2 text-xl"
             icon={faSearchengin}

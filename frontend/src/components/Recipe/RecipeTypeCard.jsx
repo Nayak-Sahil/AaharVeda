@@ -2,7 +2,7 @@ import React from "react";
 
 export default function RecipeTypeCard({ typeKey, typeVal, typeIcon, customCss }) {
   return (
-    <div className={`w-max ml-5 h-max py-2 border border-gray-100 rounded-lg px-4 flex items-center justify-between ${customCss}`}>
+    <div className={`w-max h-max ml-5 py-2 border border-gray-100 rounded-lg px-4 flex items-center justify-between ${customCss}`}>
       {typeIcon}
       <div className="flex flex-col">
         <h3 className="text-primetext text-sm leading-6 font-semibold">

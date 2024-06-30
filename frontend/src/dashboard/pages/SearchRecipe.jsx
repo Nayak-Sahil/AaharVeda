@@ -27,7 +27,7 @@ export default function SearchRecipe() {
           </div>
           <Link to={`../services/recipe/${recipeName}`} className="px-5 py-2 text-sm font-medium rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground">Discover</Link>
         </div>
-        <img className="w-52 sm:w-80" src={cookingRecipe} alt="Cooking Recipe" width={300} />
+        <img className="hidden sm:block" src={cookingRecipe} alt="Cooking Recipe" width={300} />
       </div>
     </section>
   );

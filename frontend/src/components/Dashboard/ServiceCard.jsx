@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/badge"
 
 export default function ServiceCard({ style, title, description, icon, content, isSoon, cardContentStyle }) {
   return (
-    <div className={`w-72 relative mr-5 mb-5 ${style}`}>
+    <div className={`w-72 relative sm:mr-5 mb-5 ${style}`}>
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-sm tracking-wide font-medium text-primary">

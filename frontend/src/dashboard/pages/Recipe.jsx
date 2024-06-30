@@ -40,16 +40,16 @@ export default function Recipe(props) {
 
   return (
     !isEmpty && RecipeData ? <section className="w-full h-full flex flex-col justify-between">
-      <header className="w-full sm:h-[10%] h-max mb-3 flex flex-wrap justify-center sm:justify-between items-center">
+      <header className="w-full sm:h-[10%] h-max mb-3 flex flex-wrap justify-between items-center">
         <div className="">
           <h1 className="text-primary leading-7 font-semibold">
             {RecipeData.title}
           </h1>
           <p className="text-xs font-bold">Source: <a href={RecipeData.sourceLink} className="text-primetext">{RecipeData.source}</a></p>
         </div>
-        <div className="w-max sm:h-full mt-5 sm:mt-0 h-max flex items-center justify-center">
+        <div className="w-full sm:h-full mt-5 sm:mt-0 h-max flex flex-wrap items-center justify-center">
           <RecipeTypeCard
-            customCss="ml-0"
+            customCss="ml-1"
             typeIcon={<Salad className="text-primetext w-4 mr-4" />}
             typeKey="Cuisine"
             typeVal={RecipeData.cuisine}
@@ -60,6 +60,7 @@ export default function Recipe(props) {
             typeVal={RecipeData.mealType}
           />
           <RecipeTypeCard
+            customCss="mt-3"
             typeIcon={<UtensilsCrossed className="text-primetext w-4 mr-4" />}
             typeKey="Dish Type"
             typeVal={RecipeData.dishType}
@@ -85,7 +86,7 @@ export default function Recipe(props) {
               <h1 className="font-semibold">All Ingredient</h1>
               <p><b>Total</b>: {Array.from(RecipeData.ingredientsList).length} Ingredients</p>
             </header>
-            <main className="w-full sm:h-[70%] h-max overflow-y-auto grid-cols-1 grid sm:grid-cols-3 auto-rows-auto gap-y-2 items-center">
+            <main className="w-full sm:h-[70%] h-max overflow-y-auto grid-cols-1 grid sm:grid-cols-3 auto-rows-auto gap-y-2 justify-items-center">
               {
                 Array.from(RecipeData.ingredientsList).map((item)=>{
                   return(
@@ -96,7 +97,7 @@ export default function Recipe(props) {
             </main>
           </div>
         </div>
-        <div className="sm:w-[25%] sm:mt-0 mt-5 w-full px-5 h-[450px] overflow-y-auto border border-gray-100 rounded-lg">
+        <div className="sm:w-[25%] sm:mt-0 mt-5 w-full px-5 sm:h-[450px] h-max overflow-y-auto border border-gray-100 rounded-lg">
           <LabelsAccordion labelList={RecipeData.dietLabels} title="Diet Labels" />
           <LabelsAccordion labelList={RecipeData.healthLabels} title="Health Labels" />
           <LabelsAccordion labelList={RecipeData.cautions} title="Cautions" />
