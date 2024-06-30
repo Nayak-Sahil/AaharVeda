@@ -43,11 +43,11 @@ export default function DashboardLayout() {
     //   link: "/dashboard/favourites",
     //   icon: <FolderHeart className="h-4 w-4" />,
     // },
-    {
-      label: "Account",
-      link: "/dashboard/account",
-      icon: <UserRound className="h-4 w-4" />,
-    },
+    // {
+    //   label: "Account",
+    //   link: "/dashboard/account",
+    //   icon: <UserRound className="h-4 w-4" />,
+    // },
     {
       label: "Log Out",
       link: "/",
@@ -155,7 +155,7 @@ export default function DashboardLayout() {
               </div>
             </form>
           </div>
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="secondary"
@@ -174,7 +174,7 @@ export default function DashboardLayout() {
               <DropdownMenuSeparator />
               <DropdownMenuItem>Logout</DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <Outlet />

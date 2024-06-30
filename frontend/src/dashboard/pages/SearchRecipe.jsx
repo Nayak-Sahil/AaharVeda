@@ -11,8 +11,8 @@ export default function SearchRecipe() {
   return (
     <section className="w-full">
       <h1>Here you go, Discover Your Dish 🥣.</h1>
-      <div className="w-full h-full py-5 flex items-center justify-between">
-        <div className="w-[50%]">
+      <div className="w-full h-full py-5 flex flex-wrap items-center justify-center sm:justify-between">
+        <div className="w-full sm:w-[50%]">
           <h1 className="text-primary leading-10 font-semibold">Discover Detailed Recipes for any Dish</h1>
           <p className="text-sm text-justify text-primetext leading-6">Enter any dish you've enjoyed, like <b>"Paneer Tikka"</b>. Our database has <b>precise details of foods</b>, including a wide information of <b>international cuisines</b>.</p>
           <div className="relative my-5">
@@ -27,7 +27,7 @@ export default function SearchRecipe() {
           </div>
           <Link to={`../services/recipe/${recipeName}`} className="px-5 py-2 text-sm font-medium rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground">Discover</Link>
         </div>
-        <img src={cookingRecipe} alt="Cooking Recipe" width={300} />
+        <img className="w-52 sm:w-80" src={cookingRecipe} alt="Cooking Recipe" width={300} />
       </div>
     </section>
   );

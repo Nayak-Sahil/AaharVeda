@@ -14,7 +14,7 @@ export default function LabelsAccordion({title, labelList}) {
         <AccordionTrigger className="text-sm">{title}</AccordionTrigger>
         <AccordionContent>
             {
-                labelList ? Array.from(labelList).map((labelItem)=>{
+                labelList.length != 0 ? Array.from(labelList).map((labelItem)=>{
                     return(
                         <Badge variant="outline" className="m-1">{labelItem}</Badge>
                     )

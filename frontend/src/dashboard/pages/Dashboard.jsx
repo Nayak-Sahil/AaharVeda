@@ -30,12 +30,13 @@ import ServiceCard from "@/components/Dashboard/ServiceCard";
 import CarouselRecipe from "@/components/Dashboard/CarouselRecipe";
 import PieChart from "@/components/Dashboard/PieChart";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
 
   const [RecipeList, setRecipeList] = useState([]);
   useEffect(()=>{
-    fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=salad&app_id=${import.meta.env.VITE_API_APP_ID}&app_key=${import.meta.env.VITE_API_APP_KEY}`).then((data)=> data.json()).then((recipes)=>{
+    fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=paneer&app_id=${import.meta.env.VITE_API_APP_ID}&app_key=${import.meta.env.VITE_API_APP_KEY}`).then((data)=> data.json()).then((recipes)=>{
       setRecipeList(Array.from(recipes.hits));
       console.warn(recipes);
     });
@@ -57,7 +58,7 @@ export default function Dashboard() {
         <ServiceCard title="Daily Nutrients" description="🥑 Your Daily Nutrients Intake" icon={<Leaf className="h-5 w-5 text-muted-foreground" />} content={<PieChart wrapperStyle="h-60 flex flex-col items-center justify-evenly" pieStyle="w-48 h-48" wantAction={true} />} cardContentStyle="px-0 py-0 flex flex-col justify-center items-center pb-4" />
     
         {/* Today Recipe */}
-        <ServiceCard title="Today Recipe" description="🥣 Your Daily Recipe Plan" icon={<Calendar className="h-5 w-5 text-muted-foreground" />} content={<CarouselRecipe recipeList={RecipeList.slice(6, 8)} />}/>
+        <ServiceCard title="Today Recipe" description="🥣 Your Daily Recipe Plan" icon={<Calendar className="h-5 w-5 text-muted-foreground" />} content={<CarouselRecipe recipeList={RecipeList.slice(6, 9)} />}/>
       </section>
 
       <section>
@@ -73,7 +74,7 @@ export default function Dashboard() {
             </CardDescription>
           </CardHeader>
           <CardFooter>
-            <Button variant="outline">Explore Nutrients</Button>
+            <Link to="./search-recipe" className={`text-xs w-max h-max p-2 px-5 rounded-md bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/80 tracking-wide`}>Explore Nutrients</Link>
           </CardFooter>
         </Card>
       </section>

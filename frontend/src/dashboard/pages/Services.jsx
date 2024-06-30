@@ -13,7 +13,7 @@ export default function Service() {
 
       <section className="flex flex-col md:flex-row w-full h-max items-center justify-start">
         <ServiceCard title="Recipe" description="🥘 Find any Recipe" content={<ServiceContent btnTitle="Explore Recipe" />} />
-        <ServiceCard isSoon={true} title="Nutrients" description="🥗 Find Nutrient in your recipe" content={<ServiceContent btnTitle="Explore Nutrients" />} />
+        <ServiceCard isSoon={true} title="Nutrients" description="🥗 Find Nutrient in your recipe" content={<ServiceContent isSoon={true} btnTitle="Explore Nutrients" />} />
       </section>
     </>
   );
